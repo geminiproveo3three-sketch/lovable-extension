@@ -19,6 +19,15 @@ app.get("/health", (req, res) => {
   });
 });
 
+// Root endpoint
+app.get("/", (req, res) => {
+  res.status(200).json({ 
+    message: "Lovable Extension API is running",
+    status: "online",
+    version: "1.0"
+  });
+});
+
 // Activation endpoint
 app.post("/activation/activate", (req, res) => {
   const { licenseKey, email } = req.body;
